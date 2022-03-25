@@ -40,10 +40,14 @@ public class Model {
         return furthestPosition;
     }
 
+    private static void setFurthestPosition(int position) {
+        furthestPosition = position;
+    }
+
     private static void updateFurthestPosition() {
         cars.forEach(car -> {
-            if (car.getPosition() > furthestPosition) {
-                furthestPosition = car.getPosition();
+            if (car.getPosition() > getFurthestPosition()) {
+                setFurthestPosition(car.getPosition());
             }
         });
     }
