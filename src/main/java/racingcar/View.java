@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 import camp.nextstep.edu.missionutils.Console;
 
 public class View {
-    private static Consumer<Object> printFunction = System.out::print;
+    private static Consumer<Object> printFunction = x -> System.out.print(x);
 
     static void printLineBreak() {
         printFunction.accept('\n');
