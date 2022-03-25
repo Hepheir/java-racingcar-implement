@@ -1,5 +1,8 @@
 # 미션 - 자동차 경주 게임
 
+<details>
+<summary>미션 설명</summary>
+
 ## 🔍 진행방식
 
 - 미션은 **기능 요구사항, 프로그래밍 요구사항, 과제 진행 요구사항** 세 가지로 구성되어 있다.
@@ -91,7 +94,7 @@ pobi,woni,jun
 
 실행 결과
 pobi : -
-woni : 
+woni :
 jun : -
 
 pobi : --
@@ -181,3 +184,5 @@ public class Car {
 ## 📝 License
 
 This project is MIT licensed.
+
+</details>
