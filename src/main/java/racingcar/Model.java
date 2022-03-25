@@ -22,12 +22,6 @@ public class Model {
         return cars;
     }
 
-    public static List<String> getNamesOfCars() {
-        List<String> names = new ArrayList<>();
-        cars.forEach(car -> names.add(car.getName()));
-        return names;
-    }
-
     public static int getNumberOfTries() {
         return tries;
     }
