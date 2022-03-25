@@ -40,9 +40,9 @@ public class View {
         return retval;
     }
 
-    static void printWinners() {
-        String names = String.join(Text.WORD_SEPERATOR, Model.getFurthestCarNames());
-        printFunction.accept(String.format(Text.WINNER, names));
+    static void printWinners(List<String> namesOfWinners) {
+        String joinedNames = String.join(Text.WORD_SEPERATOR, namesOfWinners);
+        printFunction.accept(String.format(Text.WINNER, joinedNames));
     };
 
     static void printError(String message) {

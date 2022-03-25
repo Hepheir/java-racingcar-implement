@@ -25,7 +25,7 @@ public class RacingCar {
     }
 
     static void onEnd() {
-        View.printWinners();
+        View.printWinners(Model.getFurthestCarNames());
     }
 
     static boolean isIngame() {
