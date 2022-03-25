@@ -10,6 +10,7 @@ public class Control {
     static void createCars() {
         View.printInputGuideForCarName();
         View.getUserInputForCarNames().forEach(Model::addCar);
+    }
 
     static void setNumberOfTries() {
         View.printInputGuideForTries();
