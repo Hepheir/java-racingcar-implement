@@ -14,7 +14,7 @@ public class Model {
         return car;
     }
 
-    public static void addCar(Car car) {
+    private static void addCar(Car car) {
         cars.add(car);
     }
 
@@ -36,7 +36,7 @@ public class Model {
         tries = times;
     }
 
-    public static int getFurthestPosition() {
+    private static int getFurthestPosition() {
         return furthestPosition;
     }
 
@@ -52,7 +52,7 @@ public class Model {
         });
     }
 
-    public static List<Car> getFurthestCars() {
+    private static List<Car> getFurthestCars() {
         List<Car> furthestCars = new ArrayList<>();
         updateFurthestPosition();
         cars.forEach(car -> {
