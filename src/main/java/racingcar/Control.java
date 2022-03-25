@@ -17,10 +17,6 @@ public class Control {
         Model.setNumberOfTries(View.getUserInputForTries());
     }
 
-    static void showWinners() {
-        View.printWinners();
-    }
-
     static void tryMoveOnceForEachCars() {
         Model.getCars().forEach(car -> {
             tryMoveForward(car);
