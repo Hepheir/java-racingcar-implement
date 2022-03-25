@@ -77,7 +77,25 @@ public class View {
     }
 
     static int getUserInputForTries() {
+        int tries;
+        while (true) {
+            try {
+                tries = getStrictUserInputForTries();
+                return tries;
+            } catch (IllegalArgumentException exception) {
+                printError("잘못된 값을 입력하였습니다.");
+            }
+        }
+    }
+
+    private static int getStrictUserInputForTries() throws IllegalArgumentException {
         String rawUserInput = Console.readLine();
-        return Integer.parseInt(rawUserInput);
+        int userInput;
+        try {
+            userInput = Integer.parseInt(rawUserInput);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("");
+        }
+        return userInput;
     }
 }
