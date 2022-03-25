@@ -20,7 +20,7 @@ public class RacingCar {
     }
 
     static void onTurn() {
-        Control.tryOnce();
+        Control.tryMoveOnceForEachCars();
         tries++;
     }
 

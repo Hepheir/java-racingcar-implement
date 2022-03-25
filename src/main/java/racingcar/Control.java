@@ -17,7 +17,7 @@ public class Control {
         View.printWinners();
     }
 
-    static void tryOnce() {
+    static void tryMoveOnceForEachCars() {
         Model.getCars().forEach(car -> {
             tryMoveForward(car);
             View.printCar(car);
