@@ -20,12 +20,12 @@ public class RacingCar {
     }
 
     static void onTurn() {
-        Control.tryOnce();
+        Control.tryMoveOnceForEachCars();
         tries++;
     }
 
     static void onEnd() {
-        View.printWinners();
+        View.printWinners(Model.getFurthestCarNames());
     }
 
     static boolean isIngame() {

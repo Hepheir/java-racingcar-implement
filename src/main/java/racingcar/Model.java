@@ -14,7 +14,7 @@ public class Model {
         return car;
     }
 
-    public static void addCar(Car car) {
+    private static void addCar(Car car) {
         cars.add(car);
     }
 
@@ -36,19 +36,23 @@ public class Model {
         tries = times;
     }
 
-    public static int getFurthestPosition() {
+    private static int getFurthestPosition() {
         return furthestPosition;
+    }
+
+    private static void setFurthestPosition(int position) {
+        furthestPosition = position;
     }
 
     private static void updateFurthestPosition() {
         cars.forEach(car -> {
-            if (car.getPosition() > furthestPosition) {
-                furthestPosition = car.getPosition();
+            if (car.getPosition() > getFurthestPosition()) {
+                setFurthestPosition(car.getPosition());
             }
         });
     }
 
-    public static List<Car> getFurthestCars() {
+    private static List<Car> getFurthestCars() {
         List<Car> furthestCars = new ArrayList<>();
         updateFurthestPosition();
         cars.forEach(car -> {
