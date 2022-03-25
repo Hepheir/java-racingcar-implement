@@ -4,9 +4,19 @@ public class Car {
     private final String name;
     private int position = 0;
 
-    public Car(String name) {
+    Car(String name) {
         this.name = name;
     }
 
-    // 추가 기능 구현
+    String getName() {
+        return this.name;
+    };
+
+    int getPosition() {
+        return this.position;
+    }
+
+    void moveForward() {
+        this.position++;
+    }
 }
