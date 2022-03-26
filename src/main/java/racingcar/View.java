@@ -50,11 +50,9 @@ public class View {
     };
 
     static List<String> getUserInputForCarNames() {
-        List<String> names;
         while (true) {
             try {
-                names = getStrictUserInputForCarNames();
-                return names;
+                return getStrictUserInputForCarNames();
             } catch (IllegalArgumentException exception) {
                 printError("이름은 5자 이하만 가능합니다.");
             }
@@ -77,11 +75,9 @@ public class View {
     }
 
     static int getUserInputForTries() {
-        int tries;
         while (true) {
             try {
-                tries = getStrictUserInputForTries();
-                return tries;
+                return getStrictUserInputForTries();
             } catch (IllegalArgumentException exception) {
                 printError("잘못된 값을 입력하였습니다.");
             }
