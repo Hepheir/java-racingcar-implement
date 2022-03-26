@@ -2,11 +2,11 @@ package racingcar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Model {
     private static List<Car> cars = new ArrayList<>();
     private static int tries = 0;
-    private static int furthestPosition = 0;
 
     public static Car addCar(String name) {
         Car car = new Car(name);
@@ -22,12 +22,6 @@ public class Model {
         return cars;
     }
 
-    public static List<String> getNamesOfCars() {
-        List<String> names = new ArrayList<>();
-        cars.forEach(car -> names.add(car.getName()));
-        return names;
-    }
-
     public static int getNumberOfTries() {
         return tries;
     }
@@ -36,36 +30,11 @@ public class Model {
         tries = times;
     }
 
-    private static int getFurthestPosition() {
-        return furthestPosition;
-    }
-
-    private static void setFurthestPosition(int position) {
-        furthestPosition = position;
-    }
-
-    private static void updateFurthestPosition() {
-        cars.forEach(car -> {
-            if (car.getPosition() > getFurthestPosition()) {
-                setFurthestPosition(car.getPosition());
-            }
-        });
-    }
-
     private static List<Car> getFurthestCars() {
-        List<Car> furthestCars = new ArrayList<>();
-        updateFurthestPosition();
-        cars.forEach(car -> {
-            if (car.getPosition() == getFurthestPosition()) {
-                furthestCars.add(car);
-            }
-        });
-        return furthestCars;
+        return cars.stream().filter(Car::isFurthestCar).collect(Collectors.toList());
     }
 
     public static List<String> getFurthestCarNames() {
-        List<String> names = new ArrayList<>();
-        getFurthestCars().forEach(car -> names.add(car.getName()));
-        return names;
+        return getFurthestCars().stream().map(Car::getName).collect(Collectors.toList());
     }
 }
