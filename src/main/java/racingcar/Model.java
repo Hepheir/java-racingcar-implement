@@ -2,11 +2,11 @@ package racingcar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Model {
     private static List<Car> cars = new ArrayList<>();
     private static int tries = 0;
-    private static int furthestPosition = 0;
 
     public static Car addCar(String name) {
         Car car = new Car(name);
@@ -30,28 +30,11 @@ public class Model {
         tries = times;
     }
 
-    private static void updateFurthestPosition() {
-        cars.forEach(car -> {
-            if (car.getPosition() > furthestPosition) {
-                furthestPosition = car.getPosition();
-            }
-        });
-    }
-
     private static List<Car> getFurthestCars() {
-        List<Car> furthestCars = new ArrayList<>();
-        updateFurthestPosition();
-        cars.forEach(car -> {
-            if (car.getPosition() == furthestPosition) {
-                furthestCars.add(car);
-            }
-        });
-        return furthestCars;
+        return cars.stream().filter(Car::isFurthestCar).collect(Collectors.toList());
     }
 
     public static List<String> getFurthestCarNames() {
-        List<String> names = new ArrayList<>();
-        getFurthestCars().forEach(car -> names.add(car.getName()));
-        return names;
+        return getFurthestCars().stream().map(Car::getName).collect(Collectors.toList());
     }
 }
