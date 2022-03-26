@@ -8,6 +8,7 @@ public class Control {
     private static final int RULET_START_INCLUSIVE = 0;
     private static final int RULET_END_INCLUSIVE = 9;
     private static final int RULET_ALLOW_MOVE_IF_GREATER_OR_EQUAL_THAN = 4;
+    private static final int CAR_NAME_MAX_LENGTH = 5;
 
     static void createCars() {
         View.printInputGuideForCarName();
@@ -41,7 +42,7 @@ public class Control {
     static List<String> getUserInputForCarNames() {
         while (true) {
             try {
-                return Input.getWordsInLimitedSize(Text.WORD_SEPERATOR, 5);
+                return Input.getWordsInLimitedSize(Text.WORD_SEPERATOR, CAR_NAME_MAX_LENGTH);
             } catch (IllegalArgumentException exception) {
                 View.printError("이름은 5자 이하만 가능합니다.");
             }
